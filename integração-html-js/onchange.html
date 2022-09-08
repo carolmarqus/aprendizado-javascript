@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <select class="form-select" onchange="capturaselect(this.value)">
+                    <option value="1">audi</option>
+                    <option value="2">fiat</option>
+                    <option value="3">ford</option>
+                    <option value="4">renault</option>
+                    <option value="5">toyota</option>
+                    <option value="6">honda</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script>
+        function capturaselect(valor) {
+
+            alert('${valor}');
+        }
+    </script>
+
+</body>
+
+</html>
