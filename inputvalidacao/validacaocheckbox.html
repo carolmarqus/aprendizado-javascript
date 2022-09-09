@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação Formulário Checkbox</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="return validaCheckbox(this)">
+
+        <div>
+            <label for="confirma">Estou de acordo</label>
+            <input type="checkbox" name="confirma" value="1">
+
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+
+    </form>
+
+    <script>
+        function validaCheckbox(formulario) {
+            if (formulario.confirma.checked == false) {
+                alert('Esse campo é obrigatorio');
+                return false;
+            } else {
+                return true
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

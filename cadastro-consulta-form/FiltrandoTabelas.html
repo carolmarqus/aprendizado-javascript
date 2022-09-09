@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cadastro">
+        <form name="formpessoas">
+            <label>nome</label>
+            <input type="text" name="nome"><br>
+            <label>sobrenome</label>
+            <input type="text" name="sobrenome"><br>
+            <label>Email</label>
+            <input type="email" name="email"><br>
+            <label>Telefone</label>
+            <input type="text" name="telefone"><br>
+            <label>endereço</label>
+            <input type="text" name="endereco"><br><br>
+            <input type="button" value="cadastra" onclick="cadPessoas(nome.value, sobrenome.value, email.value, telefone.value, endereco.value)">
+        </form>
+    </div>
+    <div id="tabelacadastro">
+        <table id="TbPessoas">
+            <thead>
+                <tr>
+                    <td>Codigo</td>
+                    <td>Nome</td>
+                    <td>Sobrenome</td>
+                    <td>Email</td>
+                    <td>Telefone</td>
+                    <td>Endereço</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script>
+        function cadPessoas(nome, sobrenome, email, telefone, endereco) {
+            let TbPessoas = document.getElementById("TbPessoas");
+            let qtdlinhas = TbPessoas.rows.length;
+            let linha = TbPessoas.insertRow(qtdlinhas);
+
+            let cellcodigo = linha.insertCell(0);
+            let cellnome = linha.insertCell(1);
+            let cellsobrenome = linha.insertCell(2);
+            let cellemail = linha.insertCell(3);
+            let celltelefone = linha.insertCell(4);
+            let cellendereco = linha.insertCell(5);
+
+            cellcodigo.innerHTML = qtdlinhas;
+            cellnome.innerHTML = nome;
+            cellsobrenome.innerHTML = sobrenome;
+            cellemail.innerHTML = email;
+            celltelefone.innerHTML = telefone;
+            cellendereco.innerHTML = endereco;
+        }
+        function EditPessoas(nome, sobrenome, email, telefone, endereco) {
+            TbPessoas.rows[index].cells[1].innerHTML = nome;
+            TbPessoas.rows[index].cells[2].innerHTML = sobrenome;
+            TbPessoas.rows[index].cells[3].innerHTML = email;
+            TbPessoas.rows[index].cells[4].innerHTML = telefone;
+            TbPessoas.rows[index].cells[5].innerHTML = endereco;
+        }
+        function alteracampos() {
+            for (var i = 0; i < TbPessoas.length; i++)
+                TbPessoas.rows[i].onclick = function () {
+                    index = this.rowIndex;
+                    document.getElementById("codigo").value = TbPessoas[index].cells[0].innerHTML
+                    document.getElementById("nome").value = TbPessoas[index].cells[1].innerHTML
+                    document.getElementById("sobrenome").value = TbPessoas[index].cells[2].innerHTML
+                    document.getElementById("email").value = TbPessoas[index].cells[3].innerHTML
+                    document.getElementById("telefone").value = TbPessoas[index].cells[4].innerHTML
+                    document.getElementById("endereco").value = TbPessoas[index].cells[5].innerHTML
+
+                }
+        }
+    </script>
+</body>
+
+</html>
